@@ -10,13 +10,14 @@ const path = require('path');
 
 //Database Connection
 mongoose.Promise = require('bluebird');
+/*
 mongoose.connect(databaseConfig.database.connectionURL);
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'There is an error while attempting to connect to the database.'));
 db.once('open', function() {
   console.log('Successfully connected to the database ' + db.name + '.');
 });
-
+*/
 //Routes Files
 const index = require('./routes/index');
 
