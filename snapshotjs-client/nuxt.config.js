@@ -13,6 +13,12 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
+  css: [
+    '@/assets/scss/style.scss'
+  ],
+  modules: [
+    '@nuxtjs/axios',
+  ],
   /*
   ** Customize the progress bar color
   */
@@ -36,4 +42,3 @@ module.exports = {
     }
   }
 }
-
