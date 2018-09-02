@@ -3,7 +3,7 @@ const puppeteer = require('puppeteer');
 module.exports = {
   //Get Index
   getIndex: function(req, res) {
-    var url = 'https://latimes.com';
+    var url = 'https://google.com';
     var screenshotFileName = 'untitled';
     var fileFormat = '.jpg';
     (async () => {
@@ -31,15 +31,24 @@ module.exports = {
           }
         })();
       });
-      await page.waitFor(30000); // 30,000 confirmed
+      await page.waitFor(30000); // 30,000 confirmed = 30 sec
       console.log('Taking screenshot...');
       await page.screenshot({ path: screenshotFileName + fileFormat, fullPage: true });
       console.log('Finished taking screenshot!');
       await browser.close();
-    })();
+      await res.sendFile(screenshotFileName + fileFormat, { 'root': './' }, function (err) {
+        if (!err) {
+          console.log('Sent:', screenshotFileName);
+        } else {
+          console.log(err);
+        }
+      });
 
+    })();
+    /*
     res.status(200).json({
       message: "Welcome to the backend!"
     });
+    */
   }
 }
