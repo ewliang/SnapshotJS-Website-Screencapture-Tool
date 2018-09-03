@@ -4,15 +4,19 @@ module.exports = {
   //Get Index
   getIndex: function(req, res) {
     var url = req.body.URL;
+    var fullPage = req.body.fullPage;
     var screenshotFileName = 'untitled';
     var fileFormat = '.jpg';
+    var viewWidth = req.body.width;
+    var viewHeight = req.body.height;
     (async () => {
-      const browser = await puppeteer.launch({ headless: true });
+      console.log('Capturing: ' + url + '\n' + 'Full Page: ' + fullPage + '\n' + viewWidth + 'x' + viewHeight);
+      const browser = await puppeteer.launch({ ignoreHTTPSErrors: true, headless: true });
       const page = await browser.newPage();
       await page.goto(url, { waitUntil: 'load', timeout: 300000 });
       console.log('Setting up viewport.');
       console.log('Loading content.');
-      await page.setViewport({ width: 1920, height: 1080 });
+      await page.setViewport({ width: viewWidth, height: viewHeight });
       // Incremental Scroll Page To Load Sections Of Content
       // Test: www.latimes.com - Long page and lazy load.
       await page.evaluate(() => {
@@ -33,9 +37,13 @@ module.exports = {
         })();
       });
       console.log('Waiting for lazy loaded content to appear...');
-      await page.waitFor(30000); // 30,000 confirmed = 30 sec
+      if(fullPage) {
+        await page.waitFor(30000); // 30,000 confirmed = 30 sec
+      } else {
+        await page.waitFor(3000); // 3 sec delay for viewport sized screenshots.
+      }
       console.log('Taking screenshot...');
-      await page.screenshot({ path: screenshotFileName + fileFormat, fullPage: true });
+      await page.screenshot({ path: screenshotFileName + fileFormat, fullPage: fullPage });
       console.log('Finished taking screenshot!');
       await browser.close();
       // Send screenshot image file to client.
