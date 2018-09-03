@@ -1,15 +1,15 @@
 <template>
   <div>
-    <URLInput></URLInput>
+    <Inputs></Inputs>
   </div>
 </template>
 
 <script>
-import URLInput from '~/components/URLInput.vue'
+import Inputs from '~/components/Inputs.vue'
 
 export default {
   components: {
-    URLInput
+    Inputs
   }
 }
 </script>
