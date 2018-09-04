@@ -1,8 +1,129 @@
 @import "normalize";
 
 // Variables
+$primaryBodyBackground: #f9fafc;
+$primaryLightDivBackground: #fff;
+$primaryInputFieldBackground: #f9fafc;
+$primaryThemeTextColor: #3498db;
+$primaryDarkTextColor: #333;
+$primaryLightTextColor: #fff;
+$primaryNeutralTextColor: #ccc;
+$primaryActionButtonColor: #3498db;
+$primaryNeutralButtonColor: #ccc;
+$primarySuccessButtonColor: #1f9437;
+
+$borderRadius: 90px;
+
 // HTML Elements
+* {
+  max-width: 100%;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1;
+  background-color: $primaryBodyBackground;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: $primaryThemeTextColor;
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  font-size: 0.875rem;
+  color: $primaryNeutralTextColor;
+  line-height: 1.6;
+}
+
+input::placeholder {
+  color: #ccc;
+  font-size: 0.875rem;
+}
+
+input[type = 'url'] {
+  @extend %input;
+}
+
+input[type = 'radio'] {
+  margin: 0.5rem;
+}
+
+fieldset > legend {
+  color: #ccc;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
 // Mixins
+
+
+// Inheritance/Extensions
+%input {
+  width: 100%;
+  max-width: 100%;
+  color: $primaryDarkTextColor;
+  background-color: $primaryInputFieldBackground;
+  padding: 0.5rem 2rem;
+  border: 0px;
+  border-radius: $borderRadius;
+}
+
+%button {
+  font-size: 0.875rem;
+  text-decoration: none;
+  padding: 0.5rem 2rem;
+  border-radius: $borderRadius;
+}
+
+.inline {
+  display: flex;
+  flex-direction: row;
+}
+
 // Components
+.panel {
+  background-color: $primaryLightDivBackground;
+  padding: 4.5rem;
+}
+
+.action-solid-button {
+  @extend %button;
+  color: #fff;
+  background-color: $primaryActionButtonColor;
+  border: 0px;
+}
+
+.neutral-border-button {
+  @extend %button;
+  color: $primaryNeutralButtonColor;
+  border: 2px solid $primaryNeutralButtonColor;
+}
+
+.success-border-button {
+  @extend %button;
+  color: $primarySuccessButtonColor;
+  border: 2px solid $primarySuccessButtonColor;
+}
+
+.main-footer {
+  color: $primaryDarkTextColor;
+  font-size: 0.875rem;
+  padding: 4.5rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
 // Pages
+
+
 // Sections
