@@ -1,3 +1,13 @@
+/*
+* SnapshotJS
+* Designed and Developed by Eric Liang
+* Author: Eric Liang
+* Author URL: https://www.eric-liang.com
+* Author Github: https://www.github.com/ewliang
+* Repository: https://github.com/ewliang/SnapshotJS-Website-Screencapture-Tool
+* License: MIT License
+*/
+
 @import "normalize";
 
 // Variables
@@ -41,7 +51,7 @@ a {
 
 p {
   font-size: 0.875rem;
-  color: $primaryNeutralTextColor;
+  color: $primaryDarkTextColor;
   line-height: 1.6;
 }
 
@@ -91,15 +101,17 @@ fieldset > legend {
 }
 
 // Components
-.panel {
-  background-color: $primaryLightDivBackground;
-  padding: 4.5rem;
-}
-
 .action-solid-button {
   @extend %button;
   color: #fff;
   background-color: $primaryActionButtonColor;
+  border: 0px;
+}
+
+.success-solid-button {
+  @extend %button;
+  color: #fff;
+  background-color: $primarySuccessButtonColor;
   border: 0px;
 }
 
@@ -127,3 +139,72 @@ fieldset > legend {
 
 
 // Sections
+// Tablets + Desktop
+@media (min-width: 576px) {
+  .container {
+    max-height: 100vh !important;
+  }
+
+  .panel {
+    background-color: $primaryLightDivBackground;
+    display: flex;
+    flex-direction: row;
+  }
+
+  #inputsPanel {
+    width: 100%;
+    max-width: 30%;
+    padding: 4rem;
+  }
+
+  #optionsSection {
+    margin: 1.25rem 0;
+    padding: 1rem;
+  }
+
+  #screenshotPreviewPanel {
+    width: 100%;
+    max-width: 70%;
+    height: 100%;
+    max-height: 100vh;
+    overflow: scroll;
+    img {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+}
+
+// Mobile
+@media (max-width: 575px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .panel {
+    max-width: 100%;
+    background-color: $primaryLightDivBackground;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #inputsPanel {
+    max-width: 100%;
+    padding: 4.5rem;
+  }
+
+  #optionsSection {
+    margin: 1.25rem 0;
+  }
+
+  #screenshotPreviewPanel {
+    max-width: 100%;
+    max-height: 100vh;
+    padding: 4.5rem;
+    img {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+}
