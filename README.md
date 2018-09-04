@@ -3,6 +3,14 @@
 SnapshotJS is a Vue.js full stack web application which allows users to input a URL
 to any website, and it will generate a screenshot of the website.
 
+## Features
+- Works with most Vue.js, React.js, and Angular.js SPA sites.
+- Works with most lazy-loaded sites (ex: www.latimes.com).
+- Works in full screen (viewport) or full page mode screenshots.
+- Multiple sizes to choose from (this also determines the full page mode's width dimension).
+- Currently exports as a .jpeg file since .jpeg is smaller and no transparency is needed for such websites.
+If you need a .png export, you'll have to find a tool online to convert the .jpeg to .png.
+
 ## Author
 
 Eric Liang
@@ -14,7 +22,7 @@ Eric Liang
 Here are the requirements to get this project running.
 1. Node v7.6.0 or higher
 2. NPM Package Manager
-3. If you are a developer, it is preferable you understand Vue.js, Node.js, and Express.js
+3. If you are a developer, it is preferable you understand Vue.js, Node.js, SCSS, and Express.js
 
 ## Setup and Installation
 
