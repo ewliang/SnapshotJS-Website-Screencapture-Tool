@@ -1,5 +1,10 @@
 <template>
-  <div>
+  <div class = "container">
+    <!--
+      SnapshotJS - by Eric Liang
+      Author URL - https://www.eric-liang.com
+      Author Github - https://www.github.com/ewliang
+    -->
     <nuxt/>
     <MainFooter/>
   </div>
