@@ -36,6 +36,17 @@ Here is the process to setup the project.
 
 NOTE - You must have both the client and the server running at the same time. All changes made are automatically updated since the server's command "npm run dev" is powered by nodemon.
 
+## Deployment
+
+### Heroku Deployment Notes
+- Make sure to have the following:
+#### Environment Variables
+- HOST 0.0.0.0
+- NODE_ENV production
+#### Buildpacks
+- https://github.com/jontewks/puppeteer-heroku-buildpack.git (must be listed first)
+- heroku/nodejs
+
 ## License
 
 [![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
