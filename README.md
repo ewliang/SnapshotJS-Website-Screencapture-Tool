@@ -3,6 +3,10 @@
 SnapshotJS is a Vue.js full stack web application which allows users to input a URL
 to any website, and it will generate a screenshot of the website.
 
+DEMO: [https://snapshotjs.herokuapp.com](https://snapshotjs.herokuapp.com)
+
+![](https://www.eric-liang.com/_nuxt/img/snapshotjs-website-design.7d25fa4.jpg)
+
 ## Features
 - Works with most Vue.js, React.js, and Angular.js SPA sites.
 - Works with most lazy-loaded sites (ex: www.latimes.com).
